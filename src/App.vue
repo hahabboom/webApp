@@ -1,28 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <main-top></main-top>
+    <tabpart></tabpart>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
+import MainTop from "@/modules/main-top";
+import Tabpart from "@/modules/tabpart";
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  components: { Tabpart, MainTop }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss">
+#id{
+  background-color: #333333;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 </style>
