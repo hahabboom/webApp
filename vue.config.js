@@ -39,14 +39,15 @@ module.exports = {
       warnings: true,
       errors: true
     },
-    // proxy: { // 可配置多个代理
-    //   '/api': {
-    //     target: 'http://222.18.149.215:8188/WRSOCASystem/', // 代理目标
-    //     changeOrigin: true, // 开发环境跨域，在生产环境中还是由后端处理
-    //     pathRewrite: {
-    //       '^/api': '/'
-    //     }
-    //   }
-    // }
+    proxy: { // 可配置多个代理
+      '/api': {
+        target: 'http://musicapi.leanapp.cn', // 代理目标
+        ws: true,
+        changeOrigin: true, // 开发环境跨域，在生产环境中还是由后端处理
+        pathRewrite: {
+          '^/api': '/'
+        }
+      }
+    }
   }
 }
