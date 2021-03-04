@@ -1,12 +1,12 @@
 <template>
   <div class="recommend">
-    <scroll class="recommend-content" :data="commandList">
+    <scroll class="recommend-content" :data="commandList" ref="scroll">
       <div>
         <div class="banner">
           <div v-if="sliderData.length" class="slider-wrapper">
             <slider>
               <div v-for="(item,i) in sliderData" :key="i">
-                <img :src="item.coverImgUrl" :alt="item.name" height="230px">
+                <img @load="loadbanner" :src="item.coverImgUrl" :alt="item.name">
               </div>
             </slider>
           </div>
@@ -16,7 +16,7 @@
           <ul>
             <li v-for="(item, i) in commandList" class="item" v-bind:key="i">
               <div class="icon">
-                <img :src="item.picUrl" alt="">
+                <img v-lazy="item.picUrl" alt="">
               </div>
               <div class="text">
                 <span class="name">{{item.copywriter}}</span>
@@ -40,7 +40,8 @@ export default {
   data() {
     return {
       sliderData: [],
-      commandList: null
+      commandList: null,
+      bannerLoad: false
     }
   },
   props: {},
@@ -55,6 +56,12 @@ export default {
       recommend.getsongList().then((data) => {
         this.commandList = data.result
       })
+    },
+    loadbanner () {
+      if (!this.bannerLoad) {
+        this.$refs.scroll.refresh()
+        this.bannerLoad = true
+      }
     }
   },
   computed: {},
