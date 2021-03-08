@@ -1,24 +1,9 @@
-# web-app
+# 仿网易云web APP
 
-## Project setup
-```
-npm install
-```
+2021.3.4
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+想写写这种音乐播放器来练练手，目前只写了推荐页面。。。
 
-### Compiles and minifies for production
-```
-npm run build
-```
+截图如下：
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+![](https://github.com/hahabboom/img-store/blob/master/webapp1.png?raw=true)
