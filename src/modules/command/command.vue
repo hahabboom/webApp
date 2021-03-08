@@ -6,7 +6,7 @@
           <div v-if="sliderData.length" class="slider-wrapper">
             <slider>
               <div v-for="(item,i) in sliderData" :key="i">
-                <img @load="loadbanner" :src="item.coverImgUrl" :alt="item.name">
+                <img @load="loadbanner" :src="item.coverImgUrl" :alt="item.name" height="230px">
               </div>
             </slider>
           </div>

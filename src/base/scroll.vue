@@ -37,9 +37,9 @@ export default {
       if (!this.$refs.wrapper) {
         return
       }
+      console.log(this.$refs.wrapper)
       this.scroll = new BScroll(this.$refs.wrapper, {
         probeType: this.probeType,
-        click: this.click
       })
     },
     disable () {
