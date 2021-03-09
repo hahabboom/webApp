@@ -15,3 +15,13 @@
 截图如下：
 
 ![](https://github.com/hahabboom/img-store/blob/master/webApp0308.gif?raw=true)
+
+2021.3.9
+
+今天做了搜索页面的热门搜索显示以及搜索框基本交互
+
+截图如下：
+
+![](https://github.com/hahabboom/img-store/blob/master/webApp030901.png?raw=true)
+
+![](https://github.com/hahabboom/img-store/blob/master/webApp030902.png?raw=true)
