@@ -1,6 +1,6 @@
 <template>
   <div class="rank">
-    <scroll class="rank-content" :data="rankList" ref="scroll">
+    <scroll class="rank-content" :data="rankList" ref="scroll2">
       <div>
         <div v-for="(item, i) in rankList" v-bind:key="i" class="item-rank">
           <img :src="item.coverImgUrl" alt="" class="cover">
@@ -34,7 +34,8 @@ export default {
     getRankList () {
       rank.getRank().then((data) => {
         this.rankList = data.list
-        this.$refs.scroll.refresh()
+        console.log(this.rankList)
+        this.$refs.scroll2.refresh()
       })
     }
   },
@@ -54,34 +55,38 @@ export default {
   height: 100%;
   background-color: #222222;
   position: fixed;
-  .item-rank{
-    display: flex;
-    margin: 0 20px;
-    height: 100px;
-    padding-top: 20px;
-    .cover{
-      width: 100px;
-      height: 100px;
-      flex: 0 0 100px;
-    }
-    .right-content{
-      flex: 1;
+  .rank-content{
+    height: 100%;
+    overflow: hidden;
+    .item-rank{
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      margin: 0 20px;
       height: 100px;
-      overflow: hidden;
-      background: #333;
-      color: rgba(255,255,255,0.3);
-      font-size: 12px;
-      ol{
-        padding-left: 20px;
+      padding-top: 20px;
+      .cover{
+        width: 100px;
+        height: 100px;
+        flex: 0 0 100px;
       }
-      .song{
-        text-overflow: ellipsis;
+      .right-content{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100px;
         overflow: hidden;
-        white-space: nowrap;
-        line-height: 26px;
+        background: #333;
+        color: rgba(255,255,255,0.3);
+        font-size: 12px;
+        ol{
+          padding-left: 20px;
+        }
+        .song{
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          line-height: 26px;
+        }
       }
     }
   }

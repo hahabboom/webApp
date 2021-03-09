@@ -5,15 +5,17 @@
     </div>
     <div class="search-content">
       <div class="title">热门搜索</div>
+      <suggest></suggest>
     </div>
   </div>
 </template>
 
 <script>
 import SearchBox from "@/base/searchBox";
+import Suggest from "@/base/suggest";
 export default {
   name: 'search',
-  components: { SearchBox },
+  components: { Suggest, SearchBox },
   data() {
     return {}
   },
@@ -40,6 +42,7 @@ export default {
     margin: 20px;
   }
   .search-content{
+    margin: 0 20px 20px 20px;
     .title{
       margin-bottom: 20px;
       font-size: 14px;
