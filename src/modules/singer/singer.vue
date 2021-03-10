@@ -36,6 +36,7 @@ export default {
       }
       ).then((data) => {
         this.singerList= data.artists
+        console.log(this.singerList)
         this.$refs.scroll.refresh()
       })
     }
