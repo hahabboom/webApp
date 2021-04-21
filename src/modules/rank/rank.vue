@@ -34,7 +34,6 @@ export default {
     getRankList () {
       rank.getRank().then((data) => {
         this.rankList = data.list
-        console.log(this.rankList)
         this.$refs.scroll2.refresh()
       })
     }
